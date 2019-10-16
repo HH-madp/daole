@@ -52,18 +52,14 @@
             <!-- Docker maven plugin -->
             <plugin>
                 <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.13</version>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.10</version>
                 <configuration>
-                    <imageName>dockerspringboot</imageName><!--[a-z 0-9] 不然docker:build会报错-->
-                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
+                    <repository>lgj/webdemo</repository>
+                    <tag>1.0</tag>
+                    <buildArgs>
+                        <JAR_FILE>/target/web-1.0.jar</JAR_FILE>
+                    </buildArgs>
                 </configuration>
             </plugin>
             <!-- Docker maven plugin -->

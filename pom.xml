@@ -52,7 +52,7 @@
            <plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.13</version>
+				<version>1.0.0</version>
 				<configuration>
 					<dockerHost>http://49.235.82.50:2375</dockerHost>
 					<imageName>49.235.82.50:8085/${project.build.finalName}:${project.version}</imageName>
